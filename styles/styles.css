@@ -1,3 +1,8 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
 body {
   font-family: "Montserrat", sans-serif;
   color: #111;
@@ -5,16 +10,67 @@ body {
 }
 ul {
   list-style: none;
+  margin: 0;
+  padding-left: 0%;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin-top: 0;
+  margin-bottom: 0;
 }
 a {
   text-decoration: none;
 }
+img {
+  display: block;
+  max-width: 100%;
+}
+.container {
+  width: 100%;
+  max-width: 1166;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin: 0 auto;
+}
+
+.header {
+  padding-top: 24px;
+  padding-bottom: 32px;
+}
+.header-container {
+  display: flex;
+}
+.menu {
+  display: flex;
+  flex-grow: 1;
+  justify-content: space-between;
+  align-items: center;
+  margin-right: 90px;
+}
+.header-list {
+  display: flex;
+  gap: 24px;
+}
+
+.header-list-sites {
+  display: flex;
+  gap: 18px;
+}
+
 .header-logo {
   font-weight: 700;
   font-size: 18px;
   line-height: 111%;
   letter-spacing: -0.03em;
   color: #111;
+  display: flex;
+  gap: 4px;
+  align-items: center;
 }
 .header-logo-part {
   font-style: italic;
@@ -31,9 +87,20 @@ a {
 .header-item-link:active {
   color: #fd9222;
 }
+
 .title {
-  background: rgba(17, 17, 17, 0.6);
+  padding-bottom: 72px;
 }
+
+.title-container {
+  background-color: rgba(17, 17, 17, 0.6);
+  padding-top: 381px;
+  padding-right: 40px;
+  padding-bottom: 40px;
+  padding-left: 40px;
+  border-radius: 30px;
+}
+
 .title-text {
   font-family: "Montserrat", sans-serif;
   font-weight: 500;
@@ -41,26 +108,53 @@ a {
   line-height: 121%;
   letter-spacing: -0.03em;
   color: #fff;
+  margin-bottom: 32px;
+  max-width: 484px;
 }
 .title-text::selection {
   background-color: blueviolet;
 }
-.btn-buy {
-  width: 144px;
-  height: 45px;
-  background: #fd9222;
+.button-container {
+  display: flex;
+  align-items: center;
 }
-.btn-made {
+.btn-buy {
+  font-family: "Montserrat", sans-serif;
   font-weight: 600;
   font-size: 14px;
   color: #fff;
+  display: flex;
+  align-items: center;
+  border: none;
+  padding: 14px 40px;
+  width: 144px;
+  height: 45px;
+
+  color: #fff;
+  background: #fd9222;
+  line-height: normal;
+  margin-right: 14px;
+}
+.btn-made {
+  display: flex;
+  align-items: center;
+  border: 1px solid #fff;
+  border-radius: 100px;
+  padding: 14px 40px;
+  font-weight: 600;
+  font-size: 14px;
+  color: #fff;
+  line-height: normal;
 }
 .btn-scroll {
+  display: flex;
+  align-items: center;
   font-weight: 500;
   font-size: 14px;
   line-height: 129%;
   letter-spacing: -0.03em;
   color: #fff;
+  margin-left: auto;
 }
 .visually-hidden {
   clip-path: inset(50%);
@@ -70,13 +164,29 @@ a {
   white-space: nowrap;
   width: 1px;
 }
-.benefits {
+
+.benefits-container {
+  padding-top: 50px;
+  padding-bottom: 50px;
   background-color: #1e1823;
+  margin-bottom: 100px;
 }
+
+.benefits-list {
+  display: flex;
+  align-items: center;
+  gap: 88px;
+  padding-right: 18px;
+}
+.benefits-item {
+  width: calc((100% - 88px * 2) / 3);
+}
+
 .benefits-item-name {
   font-weight: 600;
   font-size: 18px;
   color: #fff;
+  margin-bottom: 18px;
 }
 .benefits-item-text {
   font-weight: 400;
@@ -84,6 +194,13 @@ a {
   line-height: 129%;
   letter-spacing: -0.02em;
   color: rgba(255, 255, 255, 0.7);
+}
+.taste {
+  padding-top: 0px;
+  padding-bottom: 50px;
+}
+.taste-container {
+  padding-bottom: 100px;
 }
 .taste-name {
   font-weight: 600;
@@ -93,6 +210,8 @@ a {
   text-transform: uppercase;
   text-align: center;
   color: #111;
+  max-width: 411px;
+  margin: 0 auto 28px;
 }
 .taste-dif-name {
   color: #fd9222;
@@ -104,8 +223,39 @@ a {
   letter-spacing: -0.02em;
   text-align: center;
   color: #111;
+  margin: 0 auto 50px;
+  max-width: 486px;
+}
+.taste-list {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 19px;
 }
 
+.taste-list-item {
+  border-radius: 15px;
+
+  width: calc((100% - 19px * 3) / 4);
+  padding: 28px 36px;
+}
+
+.taste-list-item:nth-child(4n + 1) {
+  background: #fd9222;
+  color: #fff;
+}
+.taste-list-item:nth-child(4n + 3) {
+  background-color: #1e1823;
+  color: #fff;
+}
+.taste-list-item:nth-child(even) {
+  border: 1px solid #fd9222;
+  border-radius: 15px;
+  color: #111;
+}
+.taste-picture {
+  margin: 0 auto;
+  margin-bottom: 36px;
+}
 .text-subtitle {
   font-weight: 600;
   font-size: 14px;
@@ -114,14 +264,15 @@ a {
   text-transform: uppercase;
   color: #fff;
   background: #fd9222;
+  padding-left: 28px;
 }
-.taste-subtitle-2 {
-  font-weight: 600;
-  font-size: 14px;
-  line-height: 129%;
-  letter-spacing: -0.02em;
-  text-transform: uppercase;
-  color: #111;
+
+.made-container {
+  margin-bottom: 50px;
+}
+.made {
+  padding-top: 0px;
+  padding-bottom: 50px;
 }
 .made-title {
   font-weight: 600;
@@ -131,15 +282,31 @@ a {
   text-transform: uppercase;
   text-align: center;
   color: #111;
+  margin-bottom: 50px;
 }
 .made-title-2 {
   color: #fd9222;
 }
+.made-wrap {
+  display: flex;
+  gap: 20px;
+}
+.made-content {
+  border-radius: 15px;
+  background: #fff;
+  padding: 32px;
+}
 .made-subtitle {
+  margin-bottom: 28px;
+  max-width: 350px;
   font-weight: 600;
   font-size: 18px;
   line-height: 133%;
   color: #111;
+}
+
+.made-order {
+  list-style: inside;
 }
 .made-order-text {
   font-weight: 400;
@@ -147,8 +314,14 @@ a {
   line-height: 129%;
   letter-spacing: -0.02em;
   color: #111;
+  max-width: 452px;
 }
+.made-order-text:not(:last-child) {
+  margin-bottom: 24px;
+}
+
 .loved-color {
+  text-align: center;
   font-weight: 600;
   font-size: 24px;
   line-height: 117%;
@@ -156,11 +329,17 @@ a {
   text-transform: uppercase;
   text-align: center;
   color: #fd9222;
+  margin: 0 auto 50px;
 }
-.love-title {
+
+.loved-container {
+  margin-bottom: 100px;
+}
+.loved-title {
   color: #111;
 }
 .loved-subtitle {
+  padding: 18px 80px 24px 80px;
   font-weight: 600;
   font-size: 18px;
   line-height: 133%;
@@ -168,6 +347,8 @@ a {
   color: #111;
 }
 .loved-text {
+  padding-right: 24px;
+  padding-left: 24px;
   font-weight: 400;
   font-size: 14px;
   line-height: 129%;
@@ -176,9 +357,30 @@ a {
   color: rgba(17, 17, 17, 0.7);
 }
 .btn-review {
+  display: flex;
+  align-items: center;
+
+  border: 1px solid #fd9222;
+  border-radius: 100px;
   font-weight: 600;
   font-size: 18px;
   color: #111;
+  width: 222px;
+  height: 50px;
+  padding: 14px 40px;
+  margin: 50px auto 0;
+}
+.loved-list {
+  display: flex;
+  align-items: center;
+  column-gap: 28px;
+}
+.loved-list-item {
+  border: 1px solid rgba(17, 17, 17, 0.1);
+  border-radius: 15px;
+
+  width: calc((100% - 28px * 3) / 3);
+  padding: 24px 24px;
 }
 .footer {
   background-color: #1e1823;
