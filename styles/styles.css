@@ -176,6 +176,7 @@ img {
   display: flex;
   align-items: center;
   gap: 88px;
+  padding-left:18px;
   padding-right: 18px;
 }
 .benefits-item {
