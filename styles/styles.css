@@ -238,7 +238,7 @@ img {
   border-radius: 15px;
 
   width: calc((100% - 19px * 3) / 4);
-  padding: 28px 36px;
+  padding: 28px ;
 }
 
 .taste-list-item:nth-child(4n + 1) {
